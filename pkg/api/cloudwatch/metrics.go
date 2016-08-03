@@ -28,6 +28,7 @@ var customMetricsDimensionsMap map[string]map[string]map[string]*CustomMetricsCa
 
 func init() {
 	metricsMap = map[string][]string{
+		"AWS/ApiGateway":  {"4XXError", "5XXError", "Count", "IntegrationLatency", "Latency"},
 		"AWS/AutoScaling": {"GroupMinSize", "GroupMaxSize", "GroupDesiredCapacity", "GroupInServiceInstances", "GroupPendingInstances", "GroupStandbyInstances", "GroupTerminatingInstances", "GroupTotalInstances"},
 		"AWS/Billing":     {"EstimatedCharges"},
 		"AWS/CloudFront":  {"Requests", "BytesDownloaded", "BytesUploaded", "TotalErrorRate", "4xxErrorRate", "5xxErrorRate"},
@@ -86,6 +87,7 @@ func init() {
 		"AWS/WorkSpaces": {"Available", "Unhealthy", "ConnectionAttempt", "ConnectionSuccess", "ConnectionFailure", "SessionLaunchTime", "InSessionLatency", "SessionDisconnect"},
 	}
 	dimensionsMap = map[string][]string{
+		"AWS/ApiGateway":  {"ApiName", "Method", "Resource", "Stage"},
 		"AWS/AutoScaling":      {"AutoScalingGroupName"},
 		"AWS/Billing":          {"ServiceName", "LinkedAccount", "Currency"},
 		"AWS/CloudFront":       {"DistributionId", "Region"},
